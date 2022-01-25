@@ -20,7 +20,7 @@ steps:
     azureResourceManagerConnection: 'test-roche'
     subscriptionId: 'a27dd098-1a6a-4384-977c-53bbf66ef042'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'ARMPipelinesLAMP-rg'
+    resourceGroupName: 'RG-CTG-Roche-TEST'
     location: '<your-closest-location>'
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
