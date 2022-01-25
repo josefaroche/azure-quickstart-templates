@@ -13,14 +13,15 @@ steps:
     SourceFolder: 'quickstarts/microsoft.web/webapp-linux-managed-mysql/'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'test-roche'
     subscriptionId: 'a27dd098-1a6a-4384-977c-53bbf66ef042'
-    action: 'Create or update Resource Group'
-    resourceGroupName: 'RG-CTG-Roche-TEST'
-    location: 'EAST US'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'ARMPipelinesLAMP-rg'
+    location: '<your-closest-location>'
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
     csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
